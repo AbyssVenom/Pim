@@ -28,30 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblTituloJanela = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbPrioridade = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.cmbPrioridade = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblTituloJanela
+            // 
+            this.lblTituloJanela.AutoSize = true;
+            this.lblTituloJanela.Location = new System.Drawing.Point(182, 33);
+            this.lblTituloJanela.Name = "lblTituloJanela";
+            this.lblTituloJanela.Size = new System.Drawing.Size(16, 13);
+            this.lblTituloJanela.TabIndex = 0;
+            this.lblTituloJanela.Text = "...";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 39);
+            this.label2.Location = new System.Drawing.Point(147, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Selecione a nova prioridade:";
+            this.label2.Size = new System.Drawing.Size(139, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Selecione a nova prioridade";
+            // 
+            // cmbPrioridade
+            // 
+            this.cmbPrioridade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPrioridade.FormattingEnabled = true;
+            this.cmbPrioridade.Location = new System.Drawing.Point(150, 117);
+            this.cmbPrioridade.Name = "cmbPrioridade";
+            this.cmbPrioridade.Size = new System.Drawing.Size(121, 21);
+            this.cmbPrioridade.TabIndex = 2;
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Gray;
-            this.btnCancelar.Location = new System.Drawing.Point(171, 121);
+            this.btnCancelar.Location = new System.Drawing.Point(299, 239);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 29);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -59,46 +76,31 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnSalvar.Location = new System.Drawing.Point(269, 121);
+            this.btnSalvar.Location = new System.Drawing.Point(411, 239);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(113, 29);
-            this.btnSalvar.TabIndex = 7;
-            this.btnSalvar.Text = "Salvar Prioridade";
+            this.btnSalvar.TabIndex = 5;
+            this.btnSalvar.Text = "Salvar Status";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // cmbPrioridade
-            // 
-            this.cmbPrioridade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPrioridade.FormattingEnabled = true;
-            this.cmbPrioridade.Location = new System.Drawing.Point(94, 57);
-            this.cmbPrioridade.Name = "cmbPrioridade";
-            this.cmbPrioridade.Size = new System.Drawing.Size(125, 21);
-            this.cmbPrioridade.TabIndex = 6;
-            this.cmbPrioridade.SelectedIndexChanged += new System.EventHandler(this.cmbPrioridade_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Alterar prioridade do";
             // 
             // FormAlterarPrioridade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 191);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(546, 297);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbPrioridade);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTituloJanela);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAlterarPrioridade";
-            this.Text = "FormAlterarPrioridade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Alterar Prioridade";
+            this.Load += new System.EventHandler(this.FormAlterarPrioridade_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,10 +108,10 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblTituloJanela;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbPrioridade;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.ComboBox cmbPrioridade;
-        private System.Windows.Forms.Label label1;
     }
 }

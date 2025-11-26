@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pim.Model;
+using System.IO;
 
 namespace Pim
 {
     public partial class ucAbrirChamado : UserControl
     {
+        private string _caminhoArquivoSelecionado = null;
         public event EventHandler CancelarClick;
         public ucAbrirChamado()
         {
@@ -59,6 +61,61 @@ namespace Pim
 
             // Pega o texto da prioridade
             novoChamado.Prioridade = cmbPrioridade.SelectedItem.ToString();
+            if (!string.IsNullOrEmpty(_caminhoArquivoSelecionado))
+            {
+                try
+                {
+                    // 1. Define a pasta onde vamos guardar os anexos (dentro da pasta do programa)
+                    string pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Anexos");
+
+                    // 2. Cria a pasta se não existir
+                    if (!Directory.Exists(pastaDestino))
+                    {
+                        Directory.CreateDirectory(pastaDestino);
+                    }
+
+                    // 3. Gera um nome único para o arquivo (para não sobrescrever se dois usuários mandarem "foto.jpg")
+                    // Ex: foto_a1b2c3d4.jpg
+                    string extensao = Path.GetExtension(_caminhoArquivoSelecionado);
+                    string nomeArquivoUnico = $"{Path.GetFileNameWithoutExtension(_caminhoArquivoSelecionado)}_{Guid.NewGuid().ToString().Substring(0, 8)}{extensao}";
+
+                    // 4. Caminho final completo
+                    string caminhoFinal = Path.Combine(pastaDestino, nomeArquivoUnico);
+
+                    // 5. COPIA o arquivo
+                    File.Copy(_caminhoArquivoSelecionado, caminhoFinal);
+
+                    // 6. Salva esse caminho no objeto para ir pro banco
+                    novoChamado.AnexoPath = caminhoFinal;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao processar anexo: " + ex.Message);
+                    return; // Para tudo se der erro no arquivo
+                }
+            }
+            else
+            {
+                novoChamado.AnexoPath = null; // Nenhum arquivo
+            }
+            // ------------------------------
+
+            // Salva no Banco
+            try
+            {
+                ChamadoRepository.Salvar(novoChamado);
+                MessageBox.Show("Chamado criado com sucesso!");
+
+                // Limpa tudo
+                LimparCampos();
+
+                // Volta pra tela anterior
+                CancelarClick?.Invoke(this, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar: " + ex.Message);
+            }
 
             try
             {
@@ -93,6 +150,8 @@ namespace Pim
             cmbPrioridade.SelectedIndex = -1;
             cmbCategoria.Text = "-- Selecione uma Categoria --";
             cmbPrioridade.Text = "-- Selecione uma Prioridade --";
+            _caminhoArquivoSelecionado = null;
+            lblNomeArquivo.Text = "Nenhum arquivo selecionado";
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -123,6 +182,25 @@ namespace Pim
             cmbPrioridade.Items.Add("Média");
             cmbPrioridade.Items.Add("Alta");
             cmbPrioridade.Text = "-- Selecione uma Prioridade --";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Configura o filtro (opcional, para aceitar tudo ou só imagens/pdf)
+            openFileDialog1.Filter = "Todos os Arquivos|*.*|Imagens|*.jpg;*.png|PDF|*.pdf";
+            openFileDialog1.Title = "Selecione um anexo";
+
+            // Abre a janela de seleção
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Guarda o caminho na variável
+                _caminhoArquivoSelecionado = openFileDialog1.FileName;
+
+                // Mostra o nome do arquivo no Label ao lado do botão (visual)
+                // Supondo que você tenha um label chamado lblNomeArquivo
+                lblNomeArquivo.Text = Path.GetFileName(_caminhoArquivoSelecionado);
+                lblNomeArquivo.ForeColor = Color.Black;
+            }
         }
     }
 }

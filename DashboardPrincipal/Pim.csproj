@@ -80,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anexo.cs" />
+    <Compile Include="Model\Artigo.cs" />
+    <Compile Include="Model\ArtigoRepository.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CategoriaRepository.cs" />
     <Compile Include="Model\Chamado.cs" />
@@ -159,6 +161,12 @@
     <Compile Include="View\ucAbrirChamado.Designer.cs">
       <DependentUpon>ucAbrirChamado.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ucBaseConhecimento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ucBaseConhecimento.Designer.cs">
+      <DependentUpon>ucBaseConhecimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ucConfiguracoes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +178,12 @@
     </Compile>
     <Compile Include="View\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucDetalheArtigo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ucDetalheArtigo.Designer.cs">
+      <DependentUpon>ucDetalheArtigo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ucDetalhesChamados.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +202,18 @@
     </Compile>
     <Compile Include="View\ucGerirUsuario.Designer.cs">
       <DependentUpon>ucGerirUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucItemArtigo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ucItemArtigo.Designer.cs">
+      <DependentUpon>ucItemArtigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ucMeuPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ucMeuPerfil.Designer.cs">
+      <DependentUpon>ucMeuPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ucMeusChamados.cs">
       <SubType>UserControl</SubType>
@@ -245,11 +271,17 @@
     <EmbeddedResource Include="View\ucAbrirChamado.resx">
       <DependentUpon>ucAbrirChamado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ucBaseConhecimento.resx">
+      <DependentUpon>ucBaseConhecimento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ucConfiguracoes.resx">
       <DependentUpon>ucConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ucDetalheArtigo.resx">
+      <DependentUpon>ucDetalheArtigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ucDetalhesChamados.resx">
       <DependentUpon>ucDetalhesChamados.cs</DependentUpon>
@@ -259,6 +291,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ucGerirUsuario.resx">
       <DependentUpon>ucGerirUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ucItemArtigo.resx">
+      <DependentUpon>ucItemArtigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ucMeuPerfil.resx">
+      <DependentUpon>ucMeuPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ucMeusChamados.resx">
       <DependentUpon>ucMeusChamados.cs</DependentUpon>
@@ -315,6 +353,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens\dashboards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\user-avatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

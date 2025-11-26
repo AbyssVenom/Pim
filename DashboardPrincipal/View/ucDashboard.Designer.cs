@@ -33,19 +33,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.labelResolvido = new System.Windows.Forms.Label();
-            this.labelResolvidoCount = new System.Windows.Forms.Label();
+            this.lblResolvidosCount = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.labelAndamento = new System.Windows.Forms.Label();
-            this.labelAndamentoCount = new System.Windows.Forms.Label();
+            this.lblAndamentoCount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAbertos = new System.Windows.Forms.Label();
-            this.labelAbertosCount = new System.Windows.Forms.Label();
+            this.lblAbertosCount = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelTotalChamados = new System.Windows.Forms.Label();
-            this.labelTotalCount = new System.Windows.Forms.Label();
+            this.lblTotalCount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvChamadosRecentes = new System.Windows.Forms.DataGridView();
@@ -66,6 +66,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,9 +77,12 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Abrir Novo Chamado";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableStats
             // 
+            this.tableStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableStats.BackColor = System.Drawing.Color.Transparent;
             this.tableStats.ColumnCount = 4;
             this.tableStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -102,7 +106,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.labelResolvido);
-            this.panel3.Controls.Add(this.labelResolvidoCount);
+            this.panel3.Controls.Add(this.lblResolvidosCount);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(788, 5);
             this.panel3.Margin = new System.Windows.Forms.Padding(5);
@@ -129,16 +133,16 @@
             this.labelResolvido.TabIndex = 12;
             this.labelResolvido.Text = "Resolvidos";
             // 
-            // labelResolvidoCount
+            // lblResolvidosCount
             // 
-            this.labelResolvidoCount.AutoSize = true;
-            this.labelResolvidoCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResolvidoCount.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.labelResolvidoCount.Location = new System.Drawing.Point(6, 35);
-            this.labelResolvidoCount.Name = "labelResolvidoCount";
-            this.labelResolvidoCount.Size = new System.Drawing.Size(54, 65);
-            this.labelResolvidoCount.TabIndex = 11;
-            this.labelResolvidoCount.Text = "0";
+            this.lblResolvidosCount.AutoSize = true;
+            this.lblResolvidosCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResolvidosCount.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblResolvidosCount.Location = new System.Drawing.Point(6, 35);
+            this.lblResolvidosCount.Name = "lblResolvidosCount";
+            this.lblResolvidosCount.Size = new System.Drawing.Size(54, 65);
+            this.lblResolvidosCount.TabIndex = 11;
+            this.lblResolvidosCount.Text = "0";
             // 
             // panel2
             // 
@@ -146,7 +150,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.labelAndamento);
-            this.panel2.Controls.Add(this.labelAndamentoCount);
+            this.panel2.Controls.Add(this.lblAndamentoCount);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(527, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
@@ -173,16 +177,16 @@
             this.labelAndamento.TabIndex = 12;
             this.labelAndamento.Text = "EM ANDAMENTO";
             // 
-            // labelAndamentoCount
+            // lblAndamentoCount
             // 
-            this.labelAndamentoCount.AutoSize = true;
-            this.labelAndamentoCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAndamentoCount.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelAndamentoCount.Location = new System.Drawing.Point(3, 35);
-            this.labelAndamentoCount.Name = "labelAndamentoCount";
-            this.labelAndamentoCount.Size = new System.Drawing.Size(54, 65);
-            this.labelAndamentoCount.TabIndex = 11;
-            this.labelAndamentoCount.Text = "0";
+            this.lblAndamentoCount.AutoSize = true;
+            this.lblAndamentoCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAndamentoCount.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblAndamentoCount.Location = new System.Drawing.Point(3, 35);
+            this.lblAndamentoCount.Name = "lblAndamentoCount";
+            this.lblAndamentoCount.Size = new System.Drawing.Size(54, 65);
+            this.lblAndamentoCount.TabIndex = 11;
+            this.lblAndamentoCount.Text = "0";
             // 
             // panel1
             // 
@@ -190,7 +194,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.labelAbertos);
-            this.panel1.Controls.Add(this.labelAbertosCount);
+            this.panel1.Controls.Add(this.lblAbertosCount);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(266, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
@@ -217,16 +221,16 @@
             this.labelAbertos.TabIndex = 12;
             this.labelAbertos.Text = "EM ABERTO";
             // 
-            // labelAbertosCount
+            // lblAbertosCount
             // 
-            this.labelAbertosCount.AutoSize = true;
-            this.labelAbertosCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAbertosCount.ForeColor = System.Drawing.Color.DarkOrange;
-            this.labelAbertosCount.Location = new System.Drawing.Point(3, 35);
-            this.labelAbertosCount.Name = "labelAbertosCount";
-            this.labelAbertosCount.Size = new System.Drawing.Size(54, 65);
-            this.labelAbertosCount.TabIndex = 11;
-            this.labelAbertosCount.Text = "0";
+            this.lblAbertosCount.AutoSize = true;
+            this.lblAbertosCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbertosCount.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblAbertosCount.Location = new System.Drawing.Point(3, 35);
+            this.lblAbertosCount.Name = "lblAbertosCount";
+            this.lblAbertosCount.Size = new System.Drawing.Size(54, 65);
+            this.lblAbertosCount.TabIndex = 11;
+            this.lblAbertosCount.Text = "0";
             // 
             // panelTotal
             // 
@@ -234,7 +238,7 @@
             this.panelTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTotal.Controls.Add(this.label1);
             this.panelTotal.Controls.Add(this.labelTotalChamados);
-            this.panelTotal.Controls.Add(this.labelTotalCount);
+            this.panelTotal.Controls.Add(this.lblTotalCount);
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTotal.Location = new System.Drawing.Point(5, 5);
             this.panelTotal.Margin = new System.Windows.Forms.Padding(5);
@@ -262,15 +266,15 @@
             this.labelTotalChamados.TabIndex = 12;
             this.labelTotalChamados.Text = "TOTAL DE CHAMADOS";
             // 
-            // labelTotalCount
+            // lblTotalCount
             // 
-            this.labelTotalCount.AutoSize = true;
-            this.labelTotalCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalCount.Location = new System.Drawing.Point(3, 35);
-            this.labelTotalCount.Name = "labelTotalCount";
-            this.labelTotalCount.Size = new System.Drawing.Size(54, 65);
-            this.labelTotalCount.TabIndex = 11;
-            this.labelTotalCount.Text = "0";
+            this.lblTotalCount.AutoSize = true;
+            this.lblTotalCount.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCount.Location = new System.Drawing.Point(3, 35);
+            this.lblTotalCount.Name = "lblTotalCount";
+            this.lblTotalCount.Size = new System.Drawing.Size(54, 65);
+            this.lblTotalCount.TabIndex = 11;
+            this.lblTotalCount.Text = "0";
             // 
             // label6
             // 
@@ -295,7 +299,10 @@
             // 
             // dgvChamadosRecentes
             // 
-            this.dgvChamadosRecentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvChamadosRecentes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvChamadosRecentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChamadosRecentes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvChamadosRecentes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvChamadosRecentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -368,7 +375,6 @@
             this.colAcoes.Name = "colAcoes";
             this.colAcoes.Text = "Ver Detalhes";
             this.colAcoes.UseColumnTextForLinkValue = true;
-            this.colAcoes.Width = 42;
             // 
             // ucDashboard
             // 
@@ -403,16 +409,16 @@
         private System.Windows.Forms.TableLayoutPanel tableStats;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelResolvido;
-        private System.Windows.Forms.Label labelResolvidoCount;
+        private System.Windows.Forms.Label lblResolvidosCount;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelAndamento;
-        private System.Windows.Forms.Label labelAndamentoCount;
+        private System.Windows.Forms.Label lblAndamentoCount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelAbertos;
-        private System.Windows.Forms.Label labelAbertosCount;
+        private System.Windows.Forms.Label lblAbertosCount;
         private System.Windows.Forms.Panel panelTotal;
         private System.Windows.Forms.Label labelTotalChamados;
-        private System.Windows.Forms.Label labelTotalCount;
+        private System.Windows.Forms.Label lblTotalCount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvChamadosRecentes;

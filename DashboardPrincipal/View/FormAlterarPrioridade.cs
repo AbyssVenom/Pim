@@ -12,30 +12,43 @@ namespace Pim.View
 {
     public partial class FormAlterarPrioridade : Form
     {
-        public string NovaPrioridade{ get; private set; }
-        public FormAlterarPrioridade()
+        public string NovaPrioridade { get; private set; }
+        public FormAlterarPrioridade(string tituloChamado)
         {
             InitializeComponent();
+            lblTituloJanela.Text = $"Alterar Prioridade de {tituloChamado}";
+
+            // Adiciona as opções
             cmbPrioridade.Items.Add("Baixa");
-            cmbPrioridade.Items.Add("Media");
+            cmbPrioridade.Items.Add("Média");
             cmbPrioridade.Items.Add("Alta");
-            cmbPrioridade.SelectedIndex = 0;
+
+            // Seleciona um padrão
+            cmbPrioridade.SelectedIndex = 1; // Média
         }
 
-        private void cmbPrioridade_SelectedIndexChanged(object sender, EventArgs e)
+        private void FormAlterarPrioridade_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (cmbPrioridade.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione uma prioridade.");
+                return;
+            }
+
+            NovaPrioridade = cmbPrioridade.SelectedItem.ToString();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            NovaPrioridade = cmbPrioridade.SelectedItem.ToString();
-            this.DialogResult = DialogResult.OK; // Fecha com Sucesso
+            this.Close();
         }
     }
 }

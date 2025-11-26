@@ -13,14 +13,16 @@ namespace Pim.View
     public partial class FormAlterarStatus : Form
     {
         public string NovoStatus { get; private set; }
-        public FormAlterarStatus()
+        public FormAlterarStatus(string nomeChamado)
         {
             InitializeComponent();
             // Adicione as opções manualmente ou via código
+            lblTituloJanela.Text = $"{nomeChamado}";
+
+            // (Seu código de preencher o ComboBox continua aqui...)
             cmbStatus.Items.Add("Aberto");
             cmbStatus.Items.Add("Em Andamento");
             cmbStatus.Items.Add("Resolvido");
-            cmbStatus.SelectedIndex = 0;
         }
 
         private void FormAlterarStatus_Load(object sender, EventArgs e)

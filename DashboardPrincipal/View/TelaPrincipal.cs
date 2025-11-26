@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DashboardPrincipal;
+using Pim.Model;
 using Pim.View;
 
 namespace Pim
@@ -64,7 +65,24 @@ namespace Pim
 
         private void button11_Click(object sender, EventArgs e)
         {
-            CarregarTela(new ucDashboard());
+            SetarBotaoAtivo(btnDashboard);
+
+            // 1. Cria a nova dashboard
+            ucDashboard telaDash = new ucDashboard();
+
+            // 2. [A PARTE QUE FALTAVA] Liga o evento do botão novamente!
+            telaDash.BotaoAbrirChamadoClicado += (s, ev) =>
+            {
+                AbrirTelaDeCriacaoDeChamado();
+            };
+            telaDash.VerDetalhesClick += (s, idChamado) =>
+            {
+                ucDetalhesChamados telaDetalhes = new ucDetalhesChamados(idChamado);
+                CarregarTela(telaDetalhes);
+            };
+
+            // 3. Mostra a tela
+            CarregarTela(telaDash);
         }
 
         private void Teladashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -104,11 +122,80 @@ namespace Pim
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            // Cria uma nova instância da nossa tela Dashboard
-            ucDashboard telaDashboard = new ucDashboard();
+            // 1. Segurança: Se não tiver usuário logado, para tudo.
+            if (Sessao.UsuarioLogado == null) return;
 
-            // Carrega ela no painel
-            CarregarTela(telaDashboard);
+            // 2. Configura a Visibilidade do Menu (Quem vê o quê)
+            if (Sessao.UsuarioLogado.Tipo == "Solicitante")
+            {
+                // Solicitante vê pouca coisa
+                btnDashboard.Visible = true;
+                btnRelatorios.Visible = false;
+                btnConfiguracoes.Visible = false;
+                btnMeusChamados.Visible = true;
+            }
+            else if (Sessao.UsuarioLogado.Tipo == "Atendente")
+            {
+                // Atendente vê tudo, menos configuração de sistema
+                btnDashboard.Visible = true;
+                btnRelatorios.Visible = true;
+                btnMeusChamados.Visible = true;
+                btnConfiguracoes.Visible = false;
+            }
+            else // Admin
+            {
+                // Admin vê tudo
+                btnDashboard.Visible = true;
+                btnRelatorios.Visible = true;
+                btnMeusChamados.Visible = true;
+                btnConfiguracoes.Visible = true;
+            }
+
+            // 3. Decide qual tela abrir inicialmente
+            if (Sessao.UsuarioLogado.Tipo != "Solicitante")
+            {
+                // --- SE FOR ADMIN OU ATENDENTE: ABRE A DASHBOARD ---
+                SetarBotaoAtivo(btnDashboard);
+
+                ucDashboard telaDash = new ucDashboard();
+
+                // [IMPORTANTE] Aqui ligamos o botão da dashboard para ele funcionar
+                telaDash.BotaoAbrirChamadoClicado += (s, ev) =>
+                {
+                    AbrirTelaDeCriacaoDeChamado();
+                };
+                telaDash.VerDetalhesClick += (s, idChamado) =>
+                {
+                    // Abre a tela de detalhes passando o ID
+                    ucDetalhesChamados telaDetalhes = new ucDetalhesChamados(idChamado);
+                    CarregarTela(telaDetalhes);
+                };
+
+                CarregarTela(telaDash);
+            }
+            else
+            {
+                // --- SE FOR SOLICITANTE: VAI DIRETO PARA MEUS CHAMADOS ---
+                // Simula o clique no botão "Meus Chamados" para carregar a lista direto
+                bchamados_Click(sender, e);
+            }
+        }
+        private void AbrirTelaDeCriacaoDeChamado()
+        {
+            ucAbrirChamado telaAbrir = new ucAbrirChamado();
+
+            // Se o usuário clicar em Cancelar, volta para a tela anterior
+            telaAbrir.CancelarClick += (s2, ev2) =>
+            {
+                // Se for Solicitante, volta para Meus Chamados
+                if (Sessao.UsuarioLogado.Tipo == "Solicitante")
+                    bchamados_Click(null, null);
+                else
+                    // Se for Admin/Atendente, volta para Dashboard
+                    button11_Click(null, null);
+            };
+
+            CarregarTela(telaAbrir);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -150,6 +237,37 @@ namespace Pim
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SetarBotaoAtivo(button6);
+
+            ucBaseConhecimento telaKB = new ucBaseConhecimento();
+
+            // Quando clicar em um card:
+            telaKB.ArtigoSelecionado += (s, idArtigo) =>
+            {
+                // Cria a tela de detalhe
+                ucDetalheArtigo telaLeitura = new ucDetalheArtigo(idArtigo);
+
+                // Configura o botão voltar
+                telaLeitura.VoltarClick += (s2, ev2) =>
+                {
+                    button6_Click(null, null); // Recarrega a lista
+                };
+
+                CarregarTela(telaLeitura);
+            };
+
+            CarregarTela(telaKB);
+        }
+
+        private void btnConfigPerfil_Click(object sender, EventArgs e)
+        {
+            SetarBotaoAtivo(btnConfigPerfil);
+            // Abre a tela de perfil pessoal
+            CarregarTela(new ucMeuPerfil());
         }
     }
 }

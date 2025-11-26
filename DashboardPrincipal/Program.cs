@@ -20,7 +20,7 @@ namespace DashboardPrincipal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DatabaseService.InitDatabase();
-            DatabaseService.RodarScriptDeTeste();
+             DatabaseService.RodarScriptDeTeste();
             FormLogin formLogin = new FormLogin();
             if (formLogin.ShowDialog() == DialogResult.OK)
             {

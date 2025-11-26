@@ -124,6 +124,9 @@
   <data name="dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dashboards" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\dashboards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="do-utilizador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\do-utilizador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="ticket_3435842" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\ticket_3435842.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dashboards" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\dashboards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\user-avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

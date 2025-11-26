@@ -57,11 +57,12 @@
             // 
             // btnNovo
             // 
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovo.BackColor = System.Drawing.Color.SeaGreen;
             this.btnNovo.ForeColor = System.Drawing.Color.White;
             this.btnNovo.Location = new System.Drawing.Point(735, 39);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(112, 23);
+            this.btnNovo.Size = new System.Drawing.Size(126, 32);
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "+ Novo Usuario";
             this.btnNovo.UseVisualStyleBackColor = false;
@@ -71,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 21);
+            this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 25);
             this.label1.TabIndex = 0;
@@ -170,6 +171,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ucGerirUsuario";
             this.Size = new System.Drawing.Size(881, 569);
+            this.Load += new System.EventHandler(this.ucGerirUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();

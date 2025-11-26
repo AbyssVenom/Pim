@@ -33,6 +33,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblTituloJanela = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -41,9 +42,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(73, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(153, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Alterar Status do";
+            this.label1.Text = "Alterar Status do Ticket";
             // 
             // cmbStatus
             // 
@@ -86,17 +87,29 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Selecione o novo status:";
             // 
+            // lblTituloJanela
+            // 
+            this.lblTituloJanela.AutoSize = true;
+            this.lblTituloJanela.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloJanela.Location = new System.Drawing.Point(232, 11);
+            this.lblTituloJanela.Name = "lblTituloJanela";
+            this.lblTituloJanela.Size = new System.Drawing.Size(14, 15);
+            this.lblTituloJanela.TabIndex = 5;
+            this.lblTituloJanela.Text = "0";
+            // 
             // FormAlterarStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 196);
+            this.Controls.Add(this.lblTituloJanela);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.label1);
             this.Name = "FormAlterarStatus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlterarStatus";
             this.Load += new System.EventHandler(this.FormAlterarStatus_Load);
             this.ResumeLayout(false);
@@ -111,5 +124,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTituloJanela;
     }
 }

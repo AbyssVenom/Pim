@@ -41,9 +41,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(122, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 15);
+            this.label2.Size = new System.Drawing.Size(123, 15);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Selecione a nova prioridade:";
+            this.label2.Text = "Selecione o atendente";
             // 
             // btnCancelar
             // 
@@ -63,7 +63,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(113, 29);
             this.btnSalvar.TabIndex = 12;
-            this.btnSalvar.Text = "Salvar Prioridade";
+            this.btnSalvar.Text = "Salvar ";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -82,9 +82,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(122, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 17);
+            this.label1.Size = new System.Drawing.Size(144, 17);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Alterar prioridade do";
+            this.label1.Text = "Atribuir Atendente do";
             // 
             // FormAtribuirAtendente
             // 

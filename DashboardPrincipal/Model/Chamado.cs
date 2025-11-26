@@ -12,7 +12,11 @@ public class Chamado
     public string Prioridade { get; set; }
 
     // Este é o ID da categoria (a chave estrangeira)
-    public int CategoriaId { get; set; }
 
-  
+    public int CategoriaId { get; set; }
+    public int UsuarioId { get; set; }    // Quem abriu
+    public int? TecnicoId { get; set; }   // Quem atende (pode ser nulo)
+    public string AnexoPath { get; set; } // O caminho do arquivo
+
+
 }

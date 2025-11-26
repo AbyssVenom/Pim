@@ -44,22 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tlpCards = new System.Windows.Forms.TableLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblCardTaxa = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,11 +60,7 @@
             this.chartPrioridade = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartDetalheCategoria = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tlpCards.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -100,7 +81,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1223, 67);
+            this.panel1.Size = new System.Drawing.Size(1223, 82);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -138,110 +119,17 @@
             this.label1.Text = "Relatorios";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1223, 71);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.comboBox3);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1223, 71);
-            this.panel3.TabIndex = 2;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.White;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(828, 29);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 4;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.White;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(422, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(54, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(825, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Formato";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(419, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Tipo de relatorio";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Categorias";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
-            // 
             // tlpCards
             // 
-            this.tlpCards.ColumnCount = 4;
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpCards.Controls.Add(this.panel7, 3, 0);
-            this.tlpCards.Controls.Add(this.panel6, 2, 0);
+            this.tlpCards.ColumnCount = 2;
+            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCards.Controls.Add(this.panel5, 1, 0);
             this.tlpCards.Controls.Add(this.panel4, 0, 0);
             this.tlpCards.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpCards.Location = new System.Drawing.Point(0, 138);
+            this.tlpCards.Location = new System.Drawing.Point(0, 82);
             this.tlpCards.Name = "tlpCards";
             this.tlpCards.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.tlpCards.RowCount = 1;
@@ -250,70 +138,6 @@
             this.tlpCards.TabIndex = 2;
             this.tlpCards.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCards_Paint);
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.label13);
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.ForeColor = System.Drawing.Color.DimGray;
-            this.panel7.Location = new System.Drawing.Point(920, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(283, 104);
-            this.panel7.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(91, 65);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 31);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "0";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(34, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(131, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "tempo medio de resolução";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.ForeColor = System.Drawing.Color.DimGray;
-            this.panel6.Location = new System.Drawing.Point(620, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(280, 104);
-            this.panel6.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(91, 65);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 31);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "0";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(40, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Tempo medio de resposta";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -321,10 +145,10 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.ForeColor = System.Drawing.Color.DimGray;
-            this.panel5.Location = new System.Drawing.Point(320, 0);
+            this.panel5.Location = new System.Drawing.Point(621, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(280, 104);
+            this.panel5.Size = new System.Drawing.Size(582, 104);
             this.panel5.TabIndex = 1;
             // 
             // lblCardTaxa
@@ -356,7 +180,7 @@
             this.panel4.Location = new System.Drawing.Point(20, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(280, 104);
+            this.panel4.Size = new System.Drawing.Size(581, 104);
             this.panel4.TabIndex = 0;
             // 
             // lblCardTotal
@@ -384,10 +208,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 252);
+            this.tabControl1.Location = new System.Drawing.Point(0, 196);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1223, 477);
+            this.tabControl1.Size = new System.Drawing.Size(1223, 533);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -397,7 +221,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1215, 451);
+            this.tabPage1.Size = new System.Drawing.Size(1215, 507);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Visão geral";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -418,7 +242,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartCategorias.Series.Add(series1);
-            this.chartCategorias.Size = new System.Drawing.Size(1209, 168);
+            this.chartCategorias.Size = new System.Drawing.Size(1209, 224);
             this.chartCategorias.TabIndex = 1;
             this.chartCategorias.Text = "chart1";
             // 
@@ -448,7 +272,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1215, 451);
+            this.tabPage2.Size = new System.Drawing.Size(1215, 507);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Por categoria";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -467,7 +291,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1209, 445);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1209, 501);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // chartPrioridade
@@ -487,7 +311,7 @@
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.chartPrioridade.Series.Add(series3);
-            this.chartPrioridade.Size = new System.Drawing.Size(594, 433);
+            this.chartPrioridade.Size = new System.Drawing.Size(594, 489);
             this.chartPrioridade.TabIndex = 0;
             this.chartPrioridade.Text = "chart1";
             // 
@@ -508,7 +332,7 @@
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.chartDetalheCategoria.Series.Add(series4);
-            this.chartDetalheCategoria.Size = new System.Drawing.Size(594, 433);
+            this.chartDetalheCategoria.Size = new System.Drawing.Size(594, 489);
             this.chartDetalheCategoria.TabIndex = 1;
             this.chartDetalheCategoria.Text = "chart2";
             // 
@@ -519,22 +343,13 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tlpCards);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ucRelatorios";
             this.Size = new System.Drawing.Size(1223, 729);
             this.Load += new System.EventHandler(this.ucRelatorios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.tlpCards.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -557,25 +372,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tlpCards;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblCardTotal;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblCardTaxa;
         private System.Windows.Forms.Label label10;

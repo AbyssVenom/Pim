@@ -30,20 +30,23 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.btCriar = new System.Windows.Forms.Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEditar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colExcluir = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btCriar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 105);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(163, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Categorias";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -57,22 +60,13 @@
             this.Descricao,
             this.colEditar,
             this.colExcluir});
-            this.dgvCategorias.Location = new System.Drawing.Point(121, 208);
+            this.dgvCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCategorias.Location = new System.Drawing.Point(0, 100);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
-            this.dgvCategorias.Size = new System.Drawing.Size(524, 150);
+            this.dgvCategorias.Size = new System.Drawing.Size(911, 488);
             this.dgvCategorias.TabIndex = 1;
             this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
-            // 
-            // btCriar
-            // 
-            this.btCriar.Location = new System.Drawing.Point(599, 467);
-            this.btCriar.Name = "btCriar";
-            this.btCriar.Size = new System.Drawing.Size(75, 23);
-            this.btCriar.TabIndex = 2;
-            this.btCriar.Text = "Criar";
-            this.btCriar.UseVisualStyleBackColor = true;
-            this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
             // 
             // Nome
             // 
@@ -109,19 +103,42 @@
             this.colExcluir.Text = "Excluir";
             this.colExcluir.UseColumnTextForLinkValue = true;
             // 
+            // btCriar
+            // 
+            this.btCriar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCriar.BackColor = System.Drawing.Color.Teal;
+            this.btCriar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btCriar.Location = new System.Drawing.Point(738, 28);
+            this.btCriar.Name = "btCriar";
+            this.btCriar.Size = new System.Drawing.Size(170, 39);
+            this.btCriar.TabIndex = 2;
+            this.btCriar.Text = "Criar";
+            this.btCriar.UseVisualStyleBackColor = false;
+            this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btCriar);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(911, 100);
+            this.panel1.TabIndex = 3;
+            // 
             // ucGerirCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btCriar);
             this.Controls.Add(this.dgvCategorias);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "ucGerirCategorias";
             this.Size = new System.Drawing.Size(911, 588);
             this.Load += new System.EventHandler(this.ucGerirCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -134,5 +151,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewLinkColumn colEditar;
         private System.Windows.Forms.DataGridViewLinkColumn colExcluir;
+        private System.Windows.Forms.Panel panel1;
     }
 }

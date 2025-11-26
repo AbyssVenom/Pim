@@ -14,5 +14,8 @@ namespace Pim.Model
         public string SenhaHash { get; set; } // Armazenar hash, não senha em texto limpo!
         public string Tipo { get; set; } // "Admin", "Atendente", "Solicitante"
         public DateTime DataRegistro { get; set; }
+        public string Telefone { get; set; }
+        public string Departamento { get; set; }
+        public string Bio { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Pim.Model
         public string NomeTecnico { get; set; }
         public string AnexoPath { get; set; } // Caso queira mostrar se tem anexo
         public int UsuarioId { get; set; }    // Útil para saber se o usuário é dono do chamado
-        public int? TecnicoId { get; set; }   // Útil para saber se já tem técnico
+        public int? TecnicoId { get; set; } 
 
         // E adicionar a propriedade extra que queremos exibir
         public string CategoriaNome { get; set; }

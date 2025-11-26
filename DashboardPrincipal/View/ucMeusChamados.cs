@@ -26,6 +26,7 @@ namespace Pim
 
             // Carrega os dados
             AtualizarGrade();
+            AtualizarEstatisticas();
         }
         private void AtualizarGrade()
         {
@@ -53,6 +54,35 @@ namespace Pim
             {
                 MessageBox.Show("Erro ao filtrar: " + ex.Message);
             }
+            AtualizarEstatisticas();
+        }
+        private void AtualizarEstatisticas()
+        {
+            // 1. Define quem é o usuário para filtrar
+            int? idUsuario = null;
+
+            // Se for Solicitante, filtramos pelo ID dele.
+            // Se for Admin/Atendente, deixamos null para pegar TODOS os chamados do sistema.
+            if (Sessao.UsuarioLogado.Tipo == "Solicitante")
+            {
+                idUsuario = Sessao.UsuarioLogado.Id;
+            }
+
+            // 2. Busca a lista completa (sem filtro de texto, mas com filtro de usuário se houver)
+            // Usamos o método BuscarComFiltros passando "" no texto e "Todos" no status
+            var listaParaStats = ChamadoRepository.BuscarComFiltros("", "Todos", idUsuario);
+
+            // 3. Calcula os totais baseados nessa lista
+            int total = listaParaStats.Count;
+            int abertos = listaParaStats.Count(c => c.Status == "Aberto");
+            int andamento = listaParaStats.Count(c => c.Status == "Em Andamento");
+            int resolvidos = listaParaStats.Count(c => c.Status == "Resolvido");
+
+            // 4. Atualiza os Labels
+            lblTotalCount.Text = total.ToString();
+            lblAbertosCount.Text = abertos.ToString();
+            lblAndamentoCount.Text = andamento.ToString();
+            lblResolvidosCount.Text = resolvidos.ToString();
         }
 
 
@@ -78,6 +108,11 @@ namespace Pim
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             AtualizarGrade();
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

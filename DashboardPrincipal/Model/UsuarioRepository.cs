@@ -17,20 +17,22 @@ namespace Pim.Model
                 if (usuario.Id == 0) // Novo usuário
                 {
                     string sql = @"
-                    INSERT INTO Utilizadores (Nome, Email, SenhaHash, Tipo, DataRegistro)
-                    VALUES (@Nome, @Email, @SenhaHash, @Tipo, @DataRegistro);
-                    SELECT last_insert_rowid();";
+                INSERT INTO Utilizadores (Nome, Email, SenhaHash, Tipo, DataRegistro, Telefone, Departamento, Bio)
+                VALUES (@Nome, @Email, @SenhaHash, @Tipo, @DataRegistro, @Telefone, @Departamento, @Bio);
+                SELECT last_insert_rowid();";
                     usuario.Id = connection.ExecuteScalar<int>(sql, usuario);
                 }
                 else // Atualizar usuário existente
                 {
                     string sql = @"
-                    UPDATE Utilizadores SET
-                        Nome = @Nome,
-                        Email = @Email,
-                        SenhaHash = @SenhaHash,
-                        Tipo = @Tipo
-                    WHERE Id = @Id";
+                UPDATE Utilizadores SET
+                    Nome = @Nome,
+                    Email = @Email,
+                    Tipo = @Tipo,
+                    Telefone = @Telefone,
+                    Departamento = @Departamento,
+                    Bio = @Bio
+                WHERE Id = @Id";
                     connection.Execute(sql, usuario);
                 }
             }
@@ -51,6 +53,28 @@ namespace Pim.Model
             using (var connection = DatabaseService.GetConnection())
             {
                 return connection.QueryFirstOrDefault<Usuario>("SELECT * FROM Utilizadores WHERE Email = @Email", new { Email = email });
+            }
+        }
+        public static void AtualizarPerfil(Usuario u)
+        {
+            using (var conn = DatabaseService.GetConnection())
+            {
+                string sql = @"
+            UPDATE Utilizadores SET 
+                Nome = @Nome, 
+                Telefone = @Telefone, 
+                Departamento = @Departamento, 
+                Bio = @Bio 
+            WHERE Id = @Id";
+                conn.Execute(sql, u);
+            }
+        }
+        public static void AlterarSenha(int id, string novaSenhaHash)
+        {
+            using (var conn = DatabaseService.GetConnection())
+            {
+                string sql = "UPDATE Utilizadores SET SenhaHash = @SenhaHash WHERE Id = @Id";
+                conn.Execute(sql, new { SenhaHash = novaSenhaHash, Id = id });
             }
         }
 

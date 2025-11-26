@@ -44,7 +44,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -199,23 +199,24 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Escolher Arquivo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label8
+            // lblNomeArquivo
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(214, 440);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 19);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Nenhum Arquivo Escolhido";
+            this.lblNomeArquivo.AutoSize = true;
+            this.lblNomeArquivo.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNomeArquivo.Location = new System.Drawing.Point(214, 440);
+            this.lblNomeArquivo.Name = "lblNomeArquivo";
+            this.lblNomeArquivo.Size = new System.Drawing.Size(175, 19);
+            this.lblNomeArquivo.TabIndex = 16;
+            this.lblNomeArquivo.Text = "Nenhum Arquivo Escolhido";
             // 
             // ucAbrirChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblNomeArquivo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -256,6 +257,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNomeArquivo;
     }
 }

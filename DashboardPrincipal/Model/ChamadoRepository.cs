@@ -13,10 +13,30 @@ namespace Pim.Model
         {
             using (var connection = DatabaseService.GetConnection())
             {
-                // (Assumimos que só estamos criando novos por enquanto)
+                // --- CÓDIGO ATUALIZADO ---
                 string sql = @"
-                INSERT INTO Chamados (Titulo, Descricao, DataAbertura, Status, Prioridade, CategoriaId)
-                VALUES (@Titulo, @Descricao, @DataAbertura, @Status, @Prioridade, @CategoriaId)";
+            INSERT INTO Chamados (
+                Titulo, 
+                Descricao, 
+                DataAbertura, 
+                Status, 
+                Prioridade, 
+                CategoriaId, 
+                UsuarioId,   -- Novo
+                TecnicoId,   -- Novo
+                AnexoPath    -- Novo (O Anexo!)
+            )
+            VALUES (
+                @Titulo, 
+                @Descricao, 
+                @DataAbertura, 
+                @Status, 
+                @Prioridade, 
+                @CategoriaId, 
+                @UsuarioId, 
+                @TecnicoId, 
+                @AnexoPath
+            )";
 
                 connection.Execute(sql, chamado);
             }
