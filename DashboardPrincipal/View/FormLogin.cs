@@ -49,7 +49,6 @@ namespace Pim.View
             // 3. Posiciona o LOGO "SolvIT + Support" (Acima do Subtítulo)
             if (lblSolvit != null)
             {
-                // Vamos dar um espaço de 10px entre o Logo e o Subtítulo
                 int yLogo = lblSubtitulo.Top - lblSolvit.Height - 10;
 
                 // Centraliza o "SolvIT"
@@ -66,8 +65,8 @@ namespace Pim.View
                 // 4. Cola o "Support" do lado direito do "SolvIT"
                 if (lblSupport != null)
                 {
-                    int xSupport = lblSolvit.Right + 6; // 6px de espaçamento
-                                                        // Alinha verticalmente 
+                    int xSupport = lblSolvit.Right + 6; 
+                                                        
                     int ySupport = lblSolvit.Top + ((lblSolvit.Height - lblSupport.Height) / 2);
 
                     lblSupport.Location = new Point(xSupport, ySupport);
