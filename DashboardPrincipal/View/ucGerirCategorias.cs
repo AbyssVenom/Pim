@@ -71,7 +71,6 @@ namespace Pim
                 if (resultado == DialogResult.OK)
                 {
                     // 11. Salve (atualize) usando o repositório
-                    //    (O objeto 'categoriaSelecionada' já foi atualizado no formDetalhe)
                     CategoriaRepository.Salvar(categoriaSelecionada);
                     AtualizarGrade();
                 }

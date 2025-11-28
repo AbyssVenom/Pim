@@ -10,13 +10,10 @@ public class Chamado
     public DateTime DataAbertura { get; set; }
     public string Status { get; set; }
     public string Prioridade { get; set; }
-
-    // Este é o ID da categoria (a chave estrangeira)
-
     public int CategoriaId { get; set; }
-    public int UsuarioId { get; set; }    // Quem abriu
-    public int? TecnicoId { get; set; }   // Quem atende (pode ser nulo)
-    public string AnexoPath { get; set; } // O caminho do arquivo
+    public int UsuarioId { get; set; }    
+    public int? TecnicoId { get; set; }  
+    public string AnexoPath { get; set; } 
 
 
 }

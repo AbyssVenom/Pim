@@ -7,20 +7,6 @@ using Dapper;
 
 namespace Pim.Model
 {
-    // (Se sua classe 'Categoria' estiver em um arquivo separado,
-    // certifique-se de que este arquivo possa acessá-la.
-    // Se não, pode definir a classe Categoria aqui também.)
-
-    // NOTA: Se você ainda não moveu a classe Categoria para seu próprio arquivo,
-    // faça isso agora. Crie um arquivo 'Categoria.cs' e coloque:
-    // public class Categoria
-    // {
-    //     public int Id { get; set; }
-    //     public string Nome { get; set; }
-    //     public string Descricao { get; set; }
-    // }
-
-    // Esta classe será nossa fonte central de dados (simulando o BD)
     public static class CategoriaRepository
     {
         // Método para buscar todas as categorias

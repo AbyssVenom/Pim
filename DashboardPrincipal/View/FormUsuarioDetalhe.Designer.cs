@@ -44,9 +44,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 40);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(141, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(269, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de Usuarios";
             // 
@@ -56,7 +57,7 @@
             this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(148, 145);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 25);
+            this.txtNome.Size = new System.Drawing.Size(340, 25);
             this.txtNome.TabIndex = 1;
             // 
             // txtEmail
@@ -65,7 +66,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(148, 205);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 25);
+            this.txtEmail.Size = new System.Drawing.Size(340, 25);
             this.txtEmail.TabIndex = 2;
             // 
             // txtSenha
@@ -74,7 +75,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(148, 267);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(100, 25);
+            this.txtSenha.Size = new System.Drawing.Size(211, 25);
             this.txtSenha.TabIndex = 3;
             // 
             // cmbTipo
@@ -89,7 +90,7 @@
             "Solicitante"});
             this.cmbTipo.Location = new System.Drawing.Point(148, 331);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(100, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(139, 21);
             this.cmbTipo.TabIndex = 4;
             // 
             // label2
@@ -131,7 +132,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.Location = new System.Drawing.Point(634, 395);
+            this.button1.Location = new System.Drawing.Point(508, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 34);
             this.button1.TabIndex = 9;
@@ -143,9 +144,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Gainsboro;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(544, 401);
+            this.button2.Location = new System.Drawing.Point(413, 325);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(89, 34);
             this.button2.TabIndex = 10;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
@@ -156,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(620, 375);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);

@@ -35,8 +35,7 @@ namespace Pim.View
             if (cmbTipo.Items.Contains(usuario.Tipo))
                 cmbTipo.SelectedItem = usuario.Tipo;
 
-            // Senha: não preenchemos por segurança.
-            // Adicione um Label na tela dizendo: "Deixe vazio para não alterar a senha"
+            
         }
 
         private void FormUsuarioDetalhe_Load(object sender, EventArgs e)

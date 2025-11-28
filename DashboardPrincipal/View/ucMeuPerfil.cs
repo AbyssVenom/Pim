@@ -33,7 +33,6 @@ namespace Pim.View
 
             // Preenche os campos da Aba Perfil
             txtNome.Text = usuarioDoBanco.Nome;
-            // IMPORTANTE: Usamos '?? ""' para evitar erro se o campo estiver vazio (NULL) no banco
             txtTelefone.Text = usuarioDoBanco.Telefone ?? "";
             txtDepartamento.Text = usuarioDoBanco.Departamento ?? "";
             txtBio.Text = usuarioDoBanco.Bio ?? "";

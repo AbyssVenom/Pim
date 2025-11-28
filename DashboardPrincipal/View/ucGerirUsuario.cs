@@ -25,7 +25,7 @@ namespace Pim.View
         {
             // Certifique-se que o método BuscarTodos existe no UsuarioRepository
             var lista = UsuarioRepository.BuscarTodos();
-            dgvUsuarios.AutoGenerateColumns = false; // Importante pois configuramos manualmente
+            dgvUsuarios.AutoGenerateColumns = false; 
             dgvUsuarios.DataSource = null;
             dgvUsuarios.DataSource = lista;
         }

@@ -162,22 +162,21 @@ namespace Pim
         private void ucAbrirChamado_Load(object sender, EventArgs e)
         {
             // 1. Busca as categorias do nosso repositório central
-            //    (Certifique-se que o CategoriaRepository.cs existe e funciona)
             var categorias = CategoriaRepository.BuscarTodas();
 
             // 2. Carrega a lista no ComboBox
             cmbCategoria.DataSource = categorias;
 
-            // 3. (Importante!) Define qual coluna mostrar e qual usar como valor
-            cmbCategoria.DisplayMember = "Nome"; // O que o usuário vê
-            cmbCategoria.ValueMember = "Id";   // O que o código usa
+            // 3. Define qual coluna mostrar e qual usar como valor
+            cmbCategoria.DisplayMember = "Nome"; 
+            cmbCategoria.ValueMember = "Id";   
 
             // 4. Limpa a seleção inicial
             cmbCategoria.SelectedIndex = -1;
             cmbCategoria.Text = "-- Selecione uma Categoria --";
 
             // --- Para a Prioridade (Manual) ---
-            cmbPrioridade.Items.Clear(); // Limpa itens de design-time
+            cmbPrioridade.Items.Clear();
             cmbPrioridade.Items.Add("Baixa");
             cmbPrioridade.Items.Add("Média");
             cmbPrioridade.Items.Add("Alta");

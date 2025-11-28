@@ -12,7 +12,7 @@ namespace Pim.Model
         public string Titulo { get; set; }
         public string Categoria { get; set; }
         public string Resumo { get; set; }
-        public string Conteudo { get; set; } // O texto do artigo
+        public string Conteudo { get; set; } 
         public DateTime DataAtualizacao { get; set; }
     }
 }

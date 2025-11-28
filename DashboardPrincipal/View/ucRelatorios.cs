@@ -61,7 +61,7 @@ namespace Pim.View
 
             Series serie = new Series("Dados");
             serie.ChartType = tipo;
-            serie.IsValueShownAsLabel = true; // Mostra o numerozinho em cima da barra
+            serie.IsValueShownAsLabel = true; 
             grafico.Series.Add(serie);
 
             // Ajustes visuais extras
@@ -89,9 +89,6 @@ namespace Pim.View
 
             // 1. Total de Chamados
             int totalChamados = listaCompleta.Count;
-            // (Supondo que seu Label do card 1 se chama lblTotalChamados)
-            // Se você não deu nome aos labels dos cards, vá no Designer e dê nomes a eles!
-            // Ex: lblCardTotal, lblCardTaxa, etc.
             lblCardTotal.Text = totalChamados.ToString(); 
 
             // 2. Taxa de Resolução (Resolvidos / Total)
@@ -101,10 +98,6 @@ namespace Pim.View
                 taxaResolucao = ((double)resolvidos / totalChamados) * 100;
 
             lblCardTaxa.Text = $"{taxaResolucao:F1}%"; // F1 = 1 casa decimal
-
-            // (Obs: Tempo Médio exige lógica de data complexa que não temos no banco ainda,
-            // então vamos deixar como 0 por enquanto ou calcular dias desde a abertura).
-
 
             // ==========================================
             // PARTE B: GRÁFICO 1 - LINHA DO TEMPO (Por Mês)
@@ -171,8 +164,8 @@ namespace Pim.View
             var topCategorias = listaCompleta
                 .GroupBy(c => c.CategoriaNome)
                 .Select(g => new { Categoria = g.Key, Quantidade = g.Count() })
-                .OrderByDescending(x => x.Quantidade) // Do maior para o menor
-                .Take(5) // Pega só as top 5
+                .OrderByDescending(x => x.Quantidade) 
+                .Take(5) 
                 .ToList();
 
             foreach (var item in topCategorias)
@@ -237,7 +230,7 @@ namespace Pim.View
 
                 if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // 3. Monta o conteúdo do CSV (Separado por ponto e vírgula para Excel em PT-BR)
+                    // 3. Monta o conteúdo do CSV (Separado por ponto e vírgula)
                     StringBuilder sb = new StringBuilder();
 
                     // Cabeçalho

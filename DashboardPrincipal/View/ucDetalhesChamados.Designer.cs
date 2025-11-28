@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panelAcoes = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.labeltituloAcoes = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnMudarStatus = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblDescricao = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.dgvHistorico = new System.Windows.Forms.DataGridView();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtResposta = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelAcoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorico)).BeginInit();
@@ -107,6 +106,16 @@
             this.panelAcoes.Name = "panelAcoes";
             this.panelAcoes.Size = new System.Drawing.Size(200, 233);
             this.panelAcoes.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(34, 162);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 33);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Ver Anexos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labeltituloAcoes
             // 
@@ -260,17 +269,6 @@
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Titulo do chamado";
             // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(301, 91);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(149, 16);
-            this.lblDescricao.TabIndex = 2;
-            this.lblDescricao.Text = "Descrição do problema";
-            this.lblDescricao.Click += new System.EventHandler(this.label7_Click);
-            // 
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
@@ -294,21 +292,22 @@
             this.Usuario,
             this.Data,
             this.Mensagem});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistorico.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHistorico.Location = new System.Drawing.Point(24, 127);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistorico.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHistorico.Location = new System.Drawing.Point(29, 140);
             this.dgvHistorico.Name = "dgvHistorico";
             this.dgvHistorico.RowHeadersVisible = false;
             this.dgvHistorico.RowTemplate.Height = 60;
             this.dgvHistorico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorico.Size = new System.Drawing.Size(703, 340);
             this.dgvHistorico.TabIndex = 4;
+            this.dgvHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorico_CellContentClick);
             // 
             // Usuario
             // 
@@ -358,16 +357,6 @@
             this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(34, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 33);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Ver Anexos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ucDetalhesChamados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,7 +367,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvHistorico);
             this.Controls.Add(this.lblSubtitulo);
-            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.panel1);
             this.Name = "ucDetalhesChamados";
@@ -403,7 +391,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblPrioridadeValor;
         private System.Windows.Forms.Label lblStatusValor;
         private System.Windows.Forms.Button button3;

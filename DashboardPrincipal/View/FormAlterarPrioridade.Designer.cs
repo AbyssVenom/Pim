@@ -38,9 +38,10 @@
             // lblTituloJanela
             // 
             this.lblTituloJanela.AutoSize = true;
-            this.lblTituloJanela.Location = new System.Drawing.Point(182, 33);
+            this.lblTituloJanela.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloJanela.Location = new System.Drawing.Point(145, 27);
             this.lblTituloJanela.Name = "lblTituloJanela";
-            this.lblTituloJanela.Size = new System.Drawing.Size(16, 13);
+            this.lblTituloJanela.Size = new System.Drawing.Size(30, 25);
             this.lblTituloJanela.TabIndex = 0;
             this.lblTituloJanela.Text = "...";
             // 
@@ -65,7 +66,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Gray;
-            this.btnCancelar.Location = new System.Drawing.Point(299, 239);
+            this.btnCancelar.Location = new System.Drawing.Point(273, 154);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 29);
             this.btnCancelar.TabIndex = 6;
@@ -76,7 +77,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnSalvar.Location = new System.Drawing.Point(411, 239);
+            this.btnSalvar.Location = new System.Drawing.Point(371, 154);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(113, 29);
             this.btnSalvar.TabIndex = 5;
@@ -88,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 297);
+            this.ClientSize = new System.Drawing.Size(502, 200);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbPrioridade);

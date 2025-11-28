@@ -31,30 +31,49 @@ namespace Pim.View
         }
         private void CarregarHistorico()
         {
+            // 1. Busca os dados do banco
             var lista = HistoricoRepository.BuscarPorChamado(_idChamado);
 
-            // Configurações visuais via código para garantir
-            dgvHistorico.DataSource = null;
+            // 2. LIMPEZA TOTAL (Remove dados antigos e colunas antigas)
+            dgvHistorico.DataSource = null; // Desvincula qualquer fonte de dados anterior
             dgvHistorico.Rows.Clear();
-            dgvHistorico.Columns.Clear();
+            dgvHistorico.Columns.Clear();   // <--- OBRIGATÓRIO PARA RECRIA-LAS ABAIXO
 
-            // Recria colunas manualmente para controle total
-            dgvHistorico.Columns.Add("Info", "Info"); // Coluna 0: Nome e Data
-            dgvHistorico.Columns.Add("Msg", "Mensagem"); // Coluna 1: O Texto
+            // 3. CRIA AS COLUNAS MANUALMENTE (Isso resolve o seu erro)
+            dgvHistorico.Columns.Add("colInfo", "Informações"); // Coluna 0
+            dgvHistorico.Columns.Add("colMsg", "Mensagem");     // Coluna 1
 
-            dgvHistorico.Columns[0].Width = 180;
-            dgvHistorico.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            // 4. FORMATAÇÃO VISUAL DAS COLUNAS
+            dgvHistorico.Columns[0].Width = 180; // Largura da coluna de Data/Nome
+            dgvHistorico.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // Mensagem preenche o resto
+            dgvHistorico.DefaultCellStyle.WrapMode = DataGridViewTriState.True; // Permite quebra de linha (texto longo)
+            dgvHistorico.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // Ajusta altura da linha ao conteúdo
 
-            dgvHistorico.DefaultCellStyle.WrapMode = DataGridViewTriState.True; // Quebra de linha
+            // =================================================================
+            // 5. ADICIONAR A DESCRIÇÃO DO CHAMADO (PRIMEIRA LINHA)
+            // =================================================================
+            if (_chamadoAtual != null)
+            {
+                string infoInicial = $"{_chamadoAtual.NomeSolicitante} (Solicitante)\n{_chamadoAtual.DataFormatada}";
 
+                // Adiciona a linha e pega o índice dela
+                int index = dgvHistorico.Rows.Add(infoInicial, _chamadoAtual.Descricao);
+
+                // Pinta de azul claro para destacar
+                dgvHistorico.Rows[index].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+            }
+
+            // =================================================================
+            // 6. ADICIONAR O HISTÓRICO DO BANCO (LOOP)
+            // =================================================================
             foreach (var item in lista)
             {
-                // Adiciona a linha formatada
-                // Coluna 1: "Carlos Silva (23/11 16:42)"
-                // Coluna 2: "O problema foi resolvido..."
                 string info = $"{item.NomeUsuario}\n{item.DataFormatada}";
                 dgvHistorico.Rows.Add(info, item.Mensagem);
             }
+
+            // (Opcional) Tira a seleção da primeira linha para ficar mais bonito
+            dgvHistorico.ClearSelection();
         }
         private void AplicarPermissoes()
         {
@@ -64,18 +83,11 @@ namespace Pim.View
             // Se for "Solicitante" (Cliente), ele NÃO pode ver os botões de ação
             if (tipoUsuario == "Solicitante")
             {
-                // Supondo que você colocou os botões dentro de um GroupBox ou Panel chamado 'panelAcoes'
-                // Se não colocou, oculte botão por botão:
-                // btnMudarStatus.Visible = false;
-                // btnMudarPrioridade.Visible = false;
-                // btnAtribuir.Visible = false;
 
-                // Se eles estiverem num painel, é mais fácil:
                 panelAcoes.Visible = false;
             }
             else
             {
-                // Se for Admin ou Atendente, deixa visível
                 panelAcoes.Visible = true;
             }
         }
@@ -88,7 +100,7 @@ namespace Pim.View
             {
                 // 2. Preenche a tela (Esquerda)
                 lblTitulo.Text = _chamadoAtual.Titulo; // Ex: "Problema no Login"
-                lblDescricao.Text = _chamadoAtual.Descricao;
+                
 
                 // Exibe ID formatado (Ex: Chamado TK-0003...)
                 lblSubtitulo.Text = $"Chamado {_chamadoAtual.IdFormatado} • Aberto em {_chamadoAtual.DataFormatada}";
@@ -96,7 +108,7 @@ namespace Pim.View
                 // 3. Preenche a barra lateral (Direita)
                 lblStatusValor.Text = _chamadoAtual.Status;
                 lblPrioridadeValor.Text = _chamadoAtual.Prioridade;
-                lblCategoriaValor.Text = _chamadoAtual.CategoriaNome; // <-- Vantagem do ViewModel!
+                lblCategoriaValor.Text = _chamadoAtual.CategoriaNome; 
                 lblSolicitanteValor.Text = _chamadoAtual.NomeSolicitante;
 
                 // Verifica se tem técnico
@@ -158,7 +170,7 @@ namespace Pim.View
                 // 2. Cria o objeto Histórico
                 Historico novoComentario = new Historico();
                 novoComentario.ChamadoId = _idChamado;
-                novoComentario.UsuarioId = Sessao.UsuarioLogado.Id; // Quem está logado
+                novoComentario.UsuarioId = Sessao.UsuarioLogado.Id; 
                 novoComentario.Mensagem = txtResposta.Text;
                 novoComentario.DataHora = DateTime.Now;
 
@@ -229,7 +241,6 @@ namespace Pim.View
                 try
                 {
                     // 2. Atualiza no Banco de Dados
-                    // (Usa o método que criamos anteriormente no ChamadoRepository)
                     ChamadoRepository.AtribuirAtendente(_chamadoAtual.Id, form.IdAtendenteSelecionado);
 
                     // 3. Atualiza a Tela Visualmente (Label da direita)
@@ -264,6 +275,11 @@ namespace Pim.View
             {
                 MessageBox.Show("Este chamado não tem anexo ou o arquivo foi movido.");
             }
+        }
+
+        private void dgvHistorico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

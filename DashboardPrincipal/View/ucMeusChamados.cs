@@ -61,15 +61,14 @@ namespace Pim
             // 1. Define quem é o usuário para filtrar
             int? idUsuario = null;
 
-            // Se for Solicitante, filtramos pelo ID dele.
-            // Se for Admin/Atendente, deixamos null para pegar TODOS os chamados do sistema.
+            // Se for Solicitante, filtra pelo ID dele.
+            // Se for Admin/Atendente, deixa null para pegar TODOS os chamados do sistema.
             if (Sessao.UsuarioLogado.Tipo == "Solicitante")
             {
                 idUsuario = Sessao.UsuarioLogado.Id;
             }
 
             // 2. Busca a lista completa (sem filtro de texto, mas com filtro de usuário se houver)
-            // Usamos o método BuscarComFiltros passando "" no texto e "Todos" no status
             var listaParaStats = ChamadoRepository.BuscarComFiltros("", "Todos", idUsuario);
 
             // 3. Calcula os totais baseados nessa lista

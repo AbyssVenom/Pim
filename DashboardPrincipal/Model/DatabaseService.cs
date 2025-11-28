@@ -252,8 +252,6 @@ Se precisar de acesso imediato, peça ao seu gestor para abrir um chamado.', dat
                 )");
 
                 // --- Tabela de Chamados ---
-                // (Vamos aproveitar e já criar a tabela de chamados,
-                // pois vamos precisar dela logo)
                 connection.Execute(@"
                 CREATE TABLE IF NOT EXISTS Chamados (
                     Id           INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -301,10 +299,8 @@ Se precisar de acesso imediato, peça ao seu gestor para abrir um chamado.', dat
                 var userCount = connection.ExecuteScalar<int>("SELECT COUNT(*) FROM Utilizadores");
                 if (userCount == 0)
                 {
-                    // ATENÇÃO: PARA UM SISTEMA REAL, USE UMA BIBLIOTECA DE HASHING SEGURA (ex: BCrypt).
-                    // Aqui é apenas um placeholder para o hash.
                     string senhaAdmin = "admin123";
-                    string senhaAdminHash = HashSenhaSimples(senhaAdmin); // Nosso hash simples
+                    string senhaAdminHash = HashSenhaSimples(senhaAdmin); 
 
                 }
                 connection.Execute(@"

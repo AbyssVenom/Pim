@@ -31,7 +31,6 @@ namespace Pim.View
             try
             {
                 // 1. Busca usuários que são Admin ou Atendente
-                // (Certifique-se que este método existe no UsuarioRepository - fizemos ele antes)
                 var lista = UsuarioRepository.BuscarAtendentes();
 
                 // 2. Configura o ComboBox

@@ -56,7 +56,6 @@ namespace Pim
             CategoriaEditada.Descricao = txtDescricao.Text;
 
             // 3. Fechar o formulário com "OK"
-            // Isso sinaliza para a tela anterior que o usuário salvou.
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -67,6 +66,36 @@ namespace Pim
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSalvar_Click_1(object sender, EventArgs e)
+        {
+            // 1. Validação Simples: O Nome é obrigatório
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                MessageBox.Show("Por favor, digite o nome da categoria.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus(); // Coloca o cursor de volta na caixa de texto
+                return; 
+            }
+
+            // 2. Preenche o objeto com os dados da tela
+            CategoriaEditada.Nome = txtNome.Text;
+            CategoriaEditada.Descricao = txtDescricao.Text;
+
+            // 3. Define o resultado como OK (Sucesso)
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void FormCategoriaDetalhe_Load(object sender, EventArgs e)
         {
 
         }

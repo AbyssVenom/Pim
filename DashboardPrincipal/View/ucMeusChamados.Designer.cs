@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btAbrirChamado = new System.Windows.Forms.Button();
             this.panelFiltros = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.lblTotalCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChamados)).BeginInit();
             this.tableStats.SuspendLayout();
@@ -100,8 +100,19 @@
             this.panelFiltros.Size = new System.Drawing.Size(1152, 126);
             this.panelFiltros.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(11, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(141, 21);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Filtros e Pesquisa";
+            // 
             // btnFiltrar
             // 
+            this.btnFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFiltrar.Location = new System.Drawing.Point(840, 74);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(272, 31);
@@ -435,16 +446,6 @@
             this.label8.Size = new System.Drawing.Size(397, 21);
             this.label8.TabIndex = 23;
             this.label8.Text = "Visualize e gerencie todos os seus chamados de suporte";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(11, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 21);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Filtros e Pesquisa";
             // 
             // ucMeusChamados
             // 

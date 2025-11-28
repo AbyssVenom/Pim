@@ -42,7 +42,6 @@ namespace Pim
                 int? idUsuario = ObterIdUsuarioFiltro();
 
                 // 2. Busca a lista filtrada (Texto vazio, Status "Todos", Usuário Específico)
-                // Usamos o mesmo método poderoso que criamos para o "Meus Chamados"
                 var listaChamados = ChamadoRepository.BuscarComFiltros("", "Todos", idUsuario);
 
                 // 3. Calcula os totais baseados nessa lista filtrada
@@ -77,7 +76,6 @@ namespace Pim
                 // 2. Busca a lista completa filtrada
                 var lista = ChamadoRepository.BuscarComFiltros("", "Todos", idUsuario);
 
-                // 3. [AQUI ESTÁ A VARIÁVEL RECENTES]
                 // Pega apenas os 10 primeiros itens da lista para não travar a tela
                 var recentes = lista.Take(10).ToList();
 

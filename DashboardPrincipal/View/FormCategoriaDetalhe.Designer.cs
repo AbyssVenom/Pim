@@ -82,6 +82,7 @@
             this.btCancelar.TabIndex = 15;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click_1);
             // 
             // btSalvar
             // 
@@ -92,6 +93,7 @@
             this.btSalvar.TabIndex = 14;
             this.btSalvar.Text = "Salvar ";
             this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click_1);
             // 
             // label3
             // 
@@ -119,6 +121,7 @@
             this.Name = "FormCategoriaDetalhe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detalhe da categoria";
+            this.Load += new System.EventHandler(this.FormCategoriaDetalhe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

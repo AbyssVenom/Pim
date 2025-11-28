@@ -25,7 +25,7 @@ namespace Pim
         }
         private void SetarBotaoAtivo(Button botaoAtivo)
         {
-            // Define as cores (ajuste conforme seu gosto)
+            // Define as cores 
             Color corInativa = Color.White;
             Color corAtiva = Color.Gainsboro; // Ou Color.LightGray
 
@@ -43,7 +43,7 @@ namespace Pim
             if (botaoAtivo != null)
             {
                 botaoAtivo.BackColor = corAtiva;
-                botaoAtivo.ForeColor = Color.Teal; // Ou sua cor de destaque
+                botaoAtivo.ForeColor = Color.Teal; 
             }
         }
         private void CarregarTela(UserControl tela)
@@ -70,7 +70,7 @@ namespace Pim
             // 1. Cria a nova dashboard
             ucDashboard telaDash = new ucDashboard();
 
-            // 2. [A PARTE QUE FALTAVA] Liga o evento do botão novamente!
+            // 2. Liga o evento do botão novamente!
             telaDash.BotaoAbrirChamadoClicado += (s, ev) =>
             {
                 AbrirTelaDeCriacaoDeChamado();
@@ -122,10 +122,10 @@ namespace Pim
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            // 1. Segurança: Se não tiver usuário logado, para tudo.
+            // Se não tiver usuário logado, para tudo.
             if (Sessao.UsuarioLogado == null) return;
 
-            // 2. Configura a Visibilidade do Menu (Quem vê o quê)
+            // 2. Configura a Visibilidade do Menu 
             if (Sessao.UsuarioLogado.Tipo == "Solicitante")
             {
                 // Solicitante vê pouca coisa
@@ -138,7 +138,7 @@ namespace Pim
             {
                 // Atendente vê tudo, menos configuração de sistema
                 btnDashboard.Visible = true;
-                btnRelatorios.Visible = true;
+                btnRelatorios.Visible = false;
                 btnMeusChamados.Visible = true;
                 btnConfiguracoes.Visible = false;
             }
@@ -159,7 +159,6 @@ namespace Pim
 
                 ucDashboard telaDash = new ucDashboard();
 
-                // [IMPORTANTE] Aqui ligamos o botão da dashboard para ele funcionar
                 telaDash.BotaoAbrirChamadoClicado += (s, ev) =>
                 {
                     AbrirTelaDeCriacaoDeChamado();
@@ -212,7 +211,6 @@ namespace Pim
 
             telaConfig.GerirUtilizadoresClick += (s, ev) =>
             {
-                // (Quando tivermos a tela de usuários, carregaremos ela aqui)
                 CarregarTela(new ucGerirUsuario());
             };
 

@@ -36,7 +36,6 @@ namespace Pim.View
             // ---------------------------------------------------------
 
             // 2. Posiciona o SUBTÍTULO (Imediatamente acima do Card)
-            // Vamos dar um espaço de 20px entre o texto e o cartão
             if (lblSubtitulo != null)
             {
                 int xSub = (this.ClientSize.Width - lblSubtitulo.Width) / 2;
@@ -68,7 +67,7 @@ namespace Pim.View
                 if (lblSupport != null)
                 {
                     int xSupport = lblSolvit.Right + 6; // 6px de espaçamento
-                                                        // Alinha verticalmente (caso as fontes tenham tamanhos diferentes)
+                                                        // Alinha verticalmente 
                     int ySupport = lblSolvit.Top + ((lblSolvit.Height - lblSupport.Height) / 2);
 
                     lblSupport.Location = new Point(xSupport, ySupport);
@@ -96,7 +95,6 @@ namespace Pim.View
                 MessageBox.Show($"Bem-vindo, {usuarioLogado.Nome} ({usuarioLogado.Tipo})!", "Login Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Armazena o usuário logado em algum lugar acessível para o resto do sistema
-                // Por simplicidade, faremos isso em uma classe estática temporária.
                 Sessao.UsuarioLogado = usuarioLogado;
 
                 this.DialogResult = DialogResult.OK; // Sinaliza que o login foi OK
